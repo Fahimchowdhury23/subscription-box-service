@@ -26,7 +26,7 @@ text-slate-800 transition-transform ease-out duration-150 hover:bg-white/60;
 
 .footer-link {
   @apply relative rounded px-3 py-1 text-xl backdrop-blur-md
-text-slate-800 transition-transform ease-out duration-150;
+text-slate-800 transition-transform ease-out duration-150 hover:bg-primary;
 }
 .footer-link.active {
   @apply font-bold scale-105 text-white bg-primary

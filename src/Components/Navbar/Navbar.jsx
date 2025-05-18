@@ -2,6 +2,13 @@ import React from "react";
 import { Link, NavLink } from "react-router";
 
 const Navbar = () => {
+  // Smooth Scrolling by ID
+
+  const handleScroll = (sectionName) => {
+    const section = document.getElementById(sectionName);
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="w-11/12 mx-auto p-5">
       <nav className="flex justify-between">
@@ -15,15 +22,29 @@ const Navbar = () => {
             <NavLink className="nav-link" to="/">
               Home
             </NavLink>
-            <NavLink className="nav-link" to="/services">
+
+            <a
+              onClick={() => {
+                handleScroll("services");
+              }}
+              className="nav-link cursor-pointer"
+            >
               Our Services
-            </NavLink>
-            <NavLink className="nav-link" to="/success">
+            </a>
+
+            <a
+              onClick={() => {
+                handleScroll("success");
+              }}
+              className="nav-link cursor-pointer"
+            >
               Success
-            </NavLink>
-            {/* <NavLink className="nav-link" to="/">
+            </a>
+
+            {/* <a className="nav-link cursor-pointer">
               Extra 2
-            </NavLink> */}
+            </a> */}
+
             <NavLink className="nav-link" to="/my-profile">
               My Profile
             </NavLink>

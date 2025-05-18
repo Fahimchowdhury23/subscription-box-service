@@ -8,6 +8,7 @@ import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import AuthenticationLayout from "../Layouts/AuthenticationLayout/AuthenticationLayout";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import ServiceDetails from "../Pages/Services/ServiceDetails";
 
 const router = createBrowserRouter([
   {
@@ -23,14 +24,11 @@ const router = createBrowserRouter([
         element: <Profile></Profile>,
       },
       {
-        path: "services",
-        element: <Services></Services>,
+        path: "details/:id",
+        element: <ServiceDetails></ServiceDetails>,
+        loader: () => fetch("/subscriptionData.json"),
+        hydrateFallbackElement: <h1>Loading....</h1>,
       },
-      {
-        path: "success",
-        element: <Success></Success>,
-      },
-      {},
     ],
   },
   {

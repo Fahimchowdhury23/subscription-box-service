@@ -2,9 +2,9 @@ import React from "react";
 
 const Success = () => {
   return (
-    <div>
+    <section id="success" className="mt-20">
       <h1>Success</h1>
-    </div>
+    </section>
   );
 };
 

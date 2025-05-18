@@ -1,0 +1,209 @@
+[
+  {
+    "id": 1,
+    "name": "Outdoor Gear Box",
+    "thumbnail": "https://i.ibb.co/Mx3cfY4g/outdoor.webp",
+    "banner": "https://i.ibb.co/gsjKWD4/outdoor-banner.jpg",
+    "frequency": "Monthly",
+    "price": 19.99,
+    "description": "Your monthly subscription for hand-picked outdoor, survival, EDC, and other cool gear. We offer 4 different tiers that are perfect for the Beginner to Professional Outdoorsman: Basic, Advanced, Pro, & Pro Plus (Knife Of The Month).",
+    "tech_category": "Adventure",
+    "features": [
+      "Multi-tools & Knives",
+      "Paracord & Fire-Starters",
+      "Compact Survival Gadgets"
+    ],
+    "subscription_benefits": [
+      "Access to Expert Survival Guides",
+      "Member-Only Gear Discounts",
+      "Monthly Outdoor Skill Challenges"
+    ],
+    "ratings": 4.8,
+    "number_of_reviews": 315,
+    "premium": false
+  },
+  {
+    "id": 2,
+    "name": "Used Books",
+    "thumbnail": "https://i.ibb.co/gbnvgbTf/used-books-monthly.webp",
+    "banner": "https://i.ibb.co/RG5V8zhN/books-banner.webp",
+    "frequency": "Monthly",
+    "price": 29.99,
+    "description": "Get a fun book surprise in the mail every month! We believe books should continue to be circulated and that an author's work should endure. We select the best quality used books randomly from our inventory based on your selected genres. Every shipment is unique and may contain your next favorite book!",
+    "tech_category": "Books",
+    "features": [
+      "Curated Used Books",
+      "Themed Bookmarks",
+      "Clip-On Reading Lights"
+    ],
+    "subscription_benefits": [
+      "Online Book-Club Access",
+      "Personalized Title Recommendations",
+      "Discounts on Future Boxes"
+    ],
+    "ratings": 4.5,
+    "number_of_reviews": 128,
+    "premium": true
+  },
+  {
+    "id": 3,
+    "name": "Gaming Gear Box",
+    "thumbnail": "https://i.ibb.co/M5GQMYcX/Gaming.jpg",
+    "banner": "https://i.ibb.co/TxbbKscB/game-banner.jpg",
+    "frequency": "Monthly",
+    "price": 39.99,
+    "description": "A new gaming PC or laptop might be the big headline gadget you think about when you want to upgrade your setup.But don't forget about the humble gaming accessories. Think of them like the gear you take into battle with you in-game. Without a game changing keyboard, mouse, headset, and gaming chair, you're going to be at a disadvantage when you charge into the arena.So, let's get you tooled up and ready for action!",
+    "tech_category": "Gaming",
+    "features": [
+      "RGB Keyboards & Mice",
+      "High-Fidelity Headsets",
+      "Exclusive Gamer Merchandise"
+    ],
+    "subscription_benefits": [
+      "Beta Keys for Upcoming Games",
+      "Discount Codes on Top Titles",
+      "Invites to Community Tournaments"
+    ],
+    "ratings": 4.7,
+    "number_of_reviews": 210,
+    "premium": false
+  },
+  {
+    "id": 4,
+    "name": "Rare Coffees",
+    "thumbnail": "https://i.ibb.co/vxKwFdVz/MyBean.webp",
+    "banner": "https://i.ibb.co/BV7p1GJZ/mybean.webp",
+    "frequency": "Monthly",
+    "price": 49.99,
+    "description": "Give the gift of coffee this Christmas with our exclusive subscription box. Immerse yourself in a world of flavor as you discover the intricacies of single-origin beans sourced from renowned regions. Elevate your mornings and savor the finest, handpicked coffee beans from across the globe. Each box contains 2 types of freshly roasted coffee beans (12oz total).",
+    "tech_category": "Coffee",
+    "features": [
+      "Single-Origin Beans",
+      "Flavor & Roast Cards",
+      "Brewing-Method Guides"
+    ],
+    "subscription_benefits": [
+      "Free Shipping on Add-Ons",
+      "Virtual Cupping Sessions",
+      "Bean-Points Loyalty Program"
+    ],
+    "ratings": 4.6,
+    "number_of_reviews": 142,
+    "premium": true
+  },
+  {
+    "id": 5,
+    "name": "Snacks Box",
+    "thumbnail": "https://i.ibb.co/6JnxrY3V/snacks.webp",
+    "banner": "https://i.ibb.co/TxYsFbZc/snacks-banner.jpg",
+    "frequency": "Monthly",
+    "price": 24.99,
+    "description": "Just The Snacks! is a 35+ item box, where VARIETY rules. From healthy to sweet to salty and some spicy, you'll have a delightful time deciding which to choose for your next snack. Either ordering for yourself, a family member, or a best friend, this box will definitely give the opener a HUGE smile each month!",
+    "tech_category": "Food",
+    "features": [
+      "International Snack Variety",
+      "Healthy & Spicy Options",
+      "Limited-Edition Treats"
+    ],
+    "subscription_benefits": [
+      "Snack-Pairing Recipe Cards",
+      "Customizable Taste Profile",
+      "Earn-as-You-Munch Rewards"
+    ],
+    "ratings": 4.4,
+    "number_of_reviews": 98,
+    "premium": false
+  },
+  {
+    "id": 6,
+    "name": "Mix Fruit Box",
+    "thumbnail": "https://i.ibb.co/yFWZdZVk/mix-box.webp",
+    "banner": "https://i.ibb.co/SXv6gKfv/mix-box-banner.jpg",
+    "frequency": "Monthly",
+    "price": 59.99,
+    "description": "Create mouthwatering desserts right at home with Mix Box! With simple, step-by-step instructions and pre-measured ingredients, you can achieve the perfect treat every time. Mix Box takes care of the tricky parts of baking, making it a fun and easy experience!",
+    "tech_category": "Fruits",
+    "features": [
+      "Seasonal Fresh Fruits",
+      "Exotic & Rare Varieties",
+      "Storage & Ripeness Tips"
+    ],
+    "subscription_benefits": [
+      "Nutritional Fact Sheets",
+      "Flexible Swap Selections",
+      "Priority Cold-Pack Shipping"
+    ],
+    "ratings": 4.9,
+    "number_of_reviews": 176,
+    "premium": true
+  },
+  {
+    "id": 7,
+    "name": "Animal Foods",
+    "thumbnail": "https://i.ibb.co/4RKMHSrw/dog.webp",
+    "banner": "https://i.ibb.co/Gf0T4QT0/dog-banner.webp",
+    "frequency": "Yearly",
+    "price": 179.99,
+    "description": "Dogs bring out the good in us. Pedigree brings out the good in them. Express your love for your dog by serving Pedigree Complete Nutrition Adult Dry Dog Food, Roasted Chicken & Vegetable Flavor. This 100% complete and balanced adult dry dog food recipe is great-tasting and contains whole grains, protein, and accents of vegetables, bringing your dog a meal with quality nutrition that keeps them happy. To support your dog’s health and vitality, this dry dog food recipe is formulated with 36 vitamins, minerals, and amino acids. It also contains Omega 6 Fatty Acid and Zinc to help nourish a healthy skin and coat. With no high fructose corn syrup, artificial flavors, or added sugars, Pedigree Complete Nutrition Adult Dry Dog Food, Roasted Chicken & Vegetable Flavor shows your dog that you care…and have great taste.",
+    "tech_category": "Fodder",
+    "features": [
+      "Balanced Dry Kibble",
+      "Vitamin-Rich Treats",
+      "Durable Chew Toys"
+    ],
+    "subscription_benefits": [
+      "Monthly Vet Q&A Newsletter",
+      "Auto-Refill Reminders",
+      "Bulk-Order Savings"
+    ],
+    "ratings": 4.7,
+    "number_of_reviews": 102,
+    "premium": false
+  },
+  {
+    "id": 8,
+    "name": "Mystery Toy Box",
+    "thumbnail": "https://i.ibb.co/Jjz7xy7j/mystery-toy-box.webp",
+    "banner": "https://i.ibb.co/4ggTHhSY/toy-box-banner.webp",
+    "frequency": "Yearly",
+    "price": 249.99,
+    "description": "Are you looking for a thrill? Subscribe to our mystery toy box and each month well pack 5-8 toys worth of awesomeness into this cute care package! Premium toys from brands like POPMART, Medicom Toy, Tokidoki, Funko, Superplastic and more! Each bundle is unique and there will never be two of the same! You only live once. Whatcha waiting for?",
+    "tech_category": "Toys",
+    "features": [
+      "Collectible Vinyl Figures",
+      "Blind-Box Surprises",
+      "Limited-Run Enamel Pins"
+    ],
+    "subscription_benefits": [
+      "Early Access to Limited Drops",
+      "Toy-Swap Community Forum",
+      "Tiered Loyalty Points"
+    ],
+    "ratings": 4.8,
+    "number_of_reviews": 220,
+    "premium": false
+  },
+  {
+    "id": 9,
+    "name": "Perfume Box",
+    "thumbnail": "https://i.ibb.co/Z6Lz7qqJ/perfume.webp",
+    "banner": "https://i.ibb.co/fYjxXDRX/perfume-banner.webp",
+    "frequency": "Yearly",
+    "price": 299.99,
+    "description": "Clean consciously crafted fragrances that celebrate wild freedom • rebellious spirits • fierce dreamers. Discover a curated selection of new scents for fragrance connoisseurs. Going clean doesn't have to mean limiting your options. If you'd love a new perfume + 2-3 other scented goods monthly, this may be the subscription for you. #SmellWickedGood",
+    "tech_category": "Fragrance",
+    "features": [
+      "Niche Perfume Vials",
+      "Travel-Size Atomizers",
+      "Scented Candles & Oils"
+    ],
+    "subscription_benefits": [
+      "Personal Scent-Profile Consults",
+      "Build-Your-Own Box Option",
+      "VIP Private-Sale Invites"
+    ],
+    "ratings": 4.9,
+    "number_of_reviews": 145,
+    "premium": true
+  }
+]

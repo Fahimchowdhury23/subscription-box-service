@@ -1,10 +1,18 @@
-import React from "react";
+import React, { Suspense } from "react";
+import Services from "../Services/Services";
+import Success from "../Success/Success";
+import Loader from "../../Components/Loader/Loader";
+import Slider from "../Slider/Slider";
 
 const Home = () => {
   return (
-    <div>
-      <h1>I'm home</h1>
-    </div>
+    <section className="pt-20">
+      <Slider></Slider>
+      <Suspense fallback={<Loader></Loader>}>
+        <Services></Services>
+      </Suspense>
+      <Success></Success>
+    </section>
   );
 };
 
