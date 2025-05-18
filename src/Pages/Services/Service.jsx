@@ -23,7 +23,6 @@ const Service = ({ subscription }) => {
         />
 
         <h3 className="text-2xl mt-3 pl-3 font-extrabold">{name}</h3>
-
         <div className="flex mt-4 pl-3 gap-2">
           {premium && (
             <span className="badge badge-xl font-bold badge-primary rounded-full">
@@ -36,7 +35,7 @@ const Service = ({ subscription }) => {
         </div>
 
         <p className="text-lg mt-2 pl-3 font-bold">
-          ${price} / {frequency}
+          From ${price} / {frequency}
         </p>
         <ul className="my-3 flex pl-3 flex-col gap-1 text-lg">
           {features.map((feature, index) => (

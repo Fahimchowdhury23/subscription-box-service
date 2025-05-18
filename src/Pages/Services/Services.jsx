@@ -12,15 +12,15 @@ const Services = () => {
     <section id="services" className="text-center space-y-6 pt-20">
       <div className="px-40">
         <h1 className="text-3xl mb-6 font-extrabold">
-          Find the Perfect Subscription Box for Every Passion
+          Need It? Want It? It's Already in Your Next Box.
         </h1>
         <p className="text-xl">
           From trail-ready survival kits and hand-selected
-          <span className="font-bold">used books</span> to gamer accessories,
-          <span className="font-bold">rare coffee beans</span>, global snacks,
-          <span className="font-bold">fresh fruits</span>, premium pet food,
+          <span className="font-bold"> used books </span> to gamer accessories,
+          <span className="font-bold"> rare coffee beans</span>, global snacks,
+          <span className="font-bold"> fresh fruits</span>, premium pet food,
           collectible toys, and
-          <span className="font-bold">artisan fragrances</span> — explore
+          <span className="font-bold"> artisan fragrances</span> — explore
           curated boxes that deliver new surprises to your doorstep every month
           (or year). Discover something you'll love in every shipment!
         </p>

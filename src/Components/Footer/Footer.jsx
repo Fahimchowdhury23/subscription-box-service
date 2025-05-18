@@ -17,7 +17,7 @@ const Footer = () => {
       <div>
         <Link to="/">
           <h1 className="text-3xl text-[#2077b6] tracking-wide font-bold cursor-pointer">
-            WebsiteName
+            InterestInBox
           </h1>
         </Link>
       </div>
