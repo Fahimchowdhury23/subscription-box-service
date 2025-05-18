@@ -32,3 +32,8 @@ text-slate-800 transition-transform ease-out duration-150 hover:bg-primary;
   @apply font-bold scale-105 text-white bg-primary
          shadow-sm;
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+  @apply text-4xl text-gray-700;
+}

@@ -31,6 +31,7 @@ const ServiceDetails = () => {
     ratings,
     number_of_reviews,
     features,
+    premium,
   } = details;
 
   const handleSubmit = (e) => {
@@ -63,18 +64,24 @@ const ServiceDetails = () => {
         src={banner}
         alt={name}
       />
-      <div className="flex gap-6 justify-center items-center">
+      <div className="flex gap-4 justify-center items-center">
         <h1 className="text-3xl font-extrabold">{name}</h1>
+        {premium && (
+          <span className="badge badge-xl font-bold badge-primary rounded-full">
+            Most Popular
+          </span>
+        )}
         <p className="rounded-full cursor-pointer text-xl badge-xl badge badge-soft badge-info">
           {tech_category}
         </p>
       </div>
+
       <p className="text-2xl text-primary text-center font-bold">
         From ${price} / {frequency}
       </p>
       <p className="text-xl px-20 text-center mb-8">{description}</p>
 
-      <div className="flex justify-between items-center pt-12 px-40">
+      <div className="flex justify-between items-center pt-8 px-40">
         <div className="flex gap-5">
           <div className="flex gap-5">
             <div className="flex flex-col space-y-5">
