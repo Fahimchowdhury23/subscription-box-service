@@ -6,6 +6,7 @@ import ScrollToTop from "../../Components/ScrollToTop/ScrollToTop";
 
 const AuthenticationLayout = () => {
   const { state } = useNavigation();
+  console.log(state);
   return (
     <section className="bg-gradient-to-b min-h-screen from-[#87CEEB] to-white">
       <header>

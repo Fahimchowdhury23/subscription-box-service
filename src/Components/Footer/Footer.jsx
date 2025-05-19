@@ -3,12 +3,6 @@ import { FaDiscord, FaFacebook, FaGithub, FaYoutube } from "react-icons/fa";
 import { Link, NavLink } from "react-router";
 
 const Footer = () => {
-  // Smooth Scrolling by ID
-
-  const handleScroll = (sectionName) => {
-    const section = document.getElementById(sectionName);
-    section?.scrollIntoView({ behavior: "smooth" });
-  };
   return (
     <section
       className={`space-y-6 p-20 flex flex-col bg-gradient-to-r from-[#fffeff] via-[#94eae8]  to-white items-center`}
@@ -25,26 +19,6 @@ const Footer = () => {
         <NavLink className="footer-link" to="/">
           Home
         </NavLink>
-        <a
-          onClick={() => {
-            handleScroll("services");
-          }}
-          className="footer-link cursor-pointer"
-        >
-          Our Services
-        </a>
-        <a
-          onClick={() => {
-            handleScroll("success");
-          }}
-          className="footer-link cursor-pointer"
-        >
-          Success
-        </a>
-
-        {/* <a className="footer-link cursor-pointer">
-              Extra 2
-            </a> */}
 
         <NavLink className="footer-link" to="/my-profile">
           My Profile

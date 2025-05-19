@@ -11,6 +11,8 @@ import toast from "react-hot-toast";
 const Register = () => {
   const { createUser, updateUser, googleSignIn } = use(AuthContext);
   const [showPass, setShowPass] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [googleLoading, setGoogleLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
@@ -21,10 +23,36 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
+    const hasUppercase = /[A-Z]/.test(password);
+    const hasLowercase = /[a-z]/.test(password);
+    const hasDigit = /\d/.test(password);
+    const hasMinLength = password.length >= 6;
+
+    toast.dismiss();
+
+    if (!hasUppercase) {
+      toast.error("Password must include at least one uppercase letter.");
+      return;
+    }
+    if (!hasLowercase) {
+      toast.error("Password must include at least one lowercase letter.");
+      return;
+    }
+    if (!hasDigit) {
+      toast.error("Password must include at least one digit.");
+      return;
+    }
+    if (!hasMinLength) {
+      toast.error("Must be at least 6 characters long.");
+      return;
+    }
+
     const profile = {
       displayName,
       photoURL,
     };
+
+    setLoading(true);
 
     createUser(email, password)
       .then((result) => {
@@ -37,6 +65,7 @@ const Register = () => {
                 className: "text-center",
               }
             );
+            setLoading(false);
             navigate("/");
           })
           .catch((error) => {
@@ -57,6 +86,7 @@ const Register = () => {
   };
 
   const handleGoogleSignIn = () => {
+    setGoogleLoading(true);
     googleSignIn()
       .then((result) => {
         toast.success(
@@ -66,11 +96,14 @@ const Register = () => {
             className: "text-center",
           }
         );
+        setGoogleLoading(false);
         navigate("/");
       })
       .catch((error) => {
+        setGoogleLoading(false);
         toast.error("Something went wrong", error?.message);
-      });
+      })
+      .finally(() => setGoogleLoading(false));
   };
 
   return (
@@ -86,8 +119,14 @@ const Register = () => {
           onClick={handleGoogleSignIn}
           className="btn rounded-2xl w-full font-semibold bg-sky-600 hover:bg-blue-500 text-white border-none transition backdrop-blur-xl"
         >
-          <FcGoogle size={24} className="bg-white rounded-full p-0.5" />
-          Continue with Google
+          {googleLoading ? (
+            <span className="loading loading-spinner text-white"></span>
+          ) : (
+            <>
+              <FcGoogle size={24} className="bg-white rounded-full p-0.5" />
+              Continue with Google
+            </>
+          )}
         </button>
 
         <form onSubmit={handleRegister} className="flex flex-col gap-3">
@@ -156,7 +195,10 @@ const Register = () => {
               placeholder="Password"
             />
             <button
-              onClick={() => setShowPass(!showPass)}
+              onClick={(e) => {
+                e.preventDefault();
+                setShowPass(!showPass);
+              }}
               className="absolute top-3 right-5 cursor-pointer text-sky-700  text-2xl"
             >
               {showPass ? <LuEye></LuEye> : <LuEyeClosed></LuEyeClosed>}
@@ -167,7 +209,11 @@ const Register = () => {
             type="submit"
             className="w-full mt-4 btn py-3 rounded-2xl border-none bg-sky-600/80 hover:bg-sky-600 text-white font-medium transition text-2xl backdrop-blur-xl"
           >
-            Register
+            {loading ? (
+              <span className="loading loading-spinner text-white"></span>
+            ) : (
+              "Register"
+            )}
           </button>
         </form>
 

@@ -10,6 +10,8 @@ import toast from "react-hot-toast";
 const Login = () => {
   const { signInUser, googleSignIn } = use(AuthContext);
   const [showPass, setShowPass] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [googleLoading, setGoogleLoading] = useState(false);
   const navigate = useNavigate();
   const { state } = useLocation();
 
@@ -19,20 +21,50 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
+    const hasUppercase = /[A-Z]/.test(password);
+    const hasLowercase = /[a-z]/.test(password);
+    const hasDigit = /\d/.test(password);
+    const hasMinLength = password.length >= 6;
+
+    toast.dismiss();
+
+    if (!hasUppercase) {
+      toast.error("Password must include at least one uppercase letter.");
+      return;
+    }
+    if (!hasLowercase) {
+      toast.error("Password must include at least one lowercase letter.");
+      return;
+    }
+    if (!hasDigit) {
+      toast.error("Password must include at least one digit.");
+      return;
+    }
+    if (!hasMinLength) {
+      toast.error("Must be at least 6 characters long.");
+      return;
+    }
+
+    setLoading(true);
+
     signInUser(email, password)
       .then((result) => {
         toast.success(`Welcome back, ${result?.user?.displayName}!`, {
           duration: 3000,
           className: "text-center",
         });
+        setLoading(false);
         navigate(state || "/");
       })
       .catch((error) => {
         toast.error("Invalid username or password", error?.message);
+        setLoading(false);
       });
   };
 
   const handleGoogleSignIn = () => {
+    setGoogleLoading(true);
+
     googleSignIn()
       .then((result) => {
         toast.success(
@@ -42,11 +74,14 @@ const Login = () => {
             className: "text-center",
           }
         );
+        setGoogleLoading(false);
         navigate(state || "/");
       })
       .catch((error) => {
+        setGoogleLoading(false);
         toast.error("Invalid username or password", error?.message);
-      });
+      })
+      .finally(() => setGoogleLoading(false));
   };
 
   return (
@@ -70,8 +105,14 @@ const Login = () => {
               onClick={handleGoogleSignIn}
               className="btn rounded-2xl w-full font-semibold bg-sky-600 hover:bg-blue-500 text-white border-none transition backdrop-blur-xl"
             >
-              <FcGoogle size={24} className="bg-white rounded-full p-0.5" />
-              Continue with Google
+              {googleLoading ? (
+                <span className="loading loading-spinner text-white"></span>
+              ) : (
+                <>
+                  <FcGoogle size={24} className="bg-white rounded-full p-0.5" />
+                  Continue with Google
+                </>
+              )}
             </button>
 
             {/* Login Form */}
@@ -94,6 +135,7 @@ const Login = () => {
               <input
                 type="email"
                 name="email"
+                autoComplete="email"
                 required
                 className="px-4 py-3 rounded-xl bg-white/60 text-sky-700 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-white/70"
                 placeholder="Email address"
@@ -108,12 +150,16 @@ const Login = () => {
                 <input
                   type={showPass ? "text" : "password"}
                   name="password"
+                  autoComplete="current-password"
                   required
                   className="px-4 py-3 w-full rounded-xl bg-white/60 text-sky-700 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-white/70"
                   placeholder="Password"
                 />
                 <button
-                  onClick={() => setShowPass(!showPass)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setShowPass(!showPass);
+                  }}
                   className="absolute top-3 right-5 cursor-pointer text-sky-700  text-2xl"
                 >
                   {showPass ? <LuEye></LuEye> : <LuEyeClosed></LuEyeClosed>}
@@ -131,7 +177,11 @@ const Login = () => {
                 type="submit"
                 className="w-full btn py-3 rounded-2xl border-none bg-sky-600/80 hover:bg-sky-600 text-white font-medium transition backdrop-blur-xl"
               >
-                Sign In
+                {loading ? (
+                  <span className="loading loading-spinner text-white"></span>
+                ) : (
+                  "Sign In"
+                )}
               </button>
             </form>
             <p className="mt-6 justify-center flex gap-2 text-blue-500">

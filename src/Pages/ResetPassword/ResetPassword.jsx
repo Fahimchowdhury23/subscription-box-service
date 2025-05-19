@@ -1,18 +1,20 @@
-import React, { use, useRef } from "react";
+import React, { use, useRef, useState } from "react";
 import AuthContext from "../../Contexts/AuthContext";
 import { Link } from "react-router";
 import { MdEmail } from "react-icons/md";
 
 const ResetPassword = () => {
   const { passwordReset } = use(AuthContext);
+  const [loading, setLoading] = useState(false);
   const emailRef = useRef();
 
   const handleForgetPassword = async (e) => {
     e.preventDefault();
-
+    setLoading(true);
     const email = emailRef.current.value;
     try {
       await passwordReset(email);
+      setLoading(false);
       window.open("https://mail.google.com", "_blank", "noopener,noreferrer");
     } catch (error) {
       console.log(error);
@@ -41,7 +43,13 @@ const ResetPassword = () => {
             type="submit"
             className="w-full btn mt-2 flex items-center rounded-xl border-none bg-sky-600/80 hover:bg-sky-600 text-white font-medium transition backdrop-blur-xl"
           >
-            <MdEmail size={20} /> Send Email
+            {loading ? (
+              <span className="loading loading-spinner text-white"></span>
+            ) : (
+              <>
+                <MdEmail size={20} /> Send Email
+              </>
+            )}
           </button>
         </form>
 
