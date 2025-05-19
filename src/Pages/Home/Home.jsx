@@ -3,6 +3,7 @@ import Services from "../Services/Services";
 import Success from "../Success/Success";
 import Loader from "../../Components/Loader/Loader";
 import Slider from "../Slider/Slider";
+import Shopping from "../Shopping/Shopping";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
         <Suspense fallback={<Loader></Loader>}>
           <Services></Services>
         </Suspense>
+        <Shopping></Shopping>
         <Success></Success>
       </div>
     </section>

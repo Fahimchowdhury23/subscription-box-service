@@ -9,6 +9,7 @@ import Register from "../Pages/Register/Register";
 import ServiceDetails from "../Pages/Services/ServiceDetails";
 import ResetPassword from "../Pages/ResetPassword/ResetPassword";
 import PrivateRoute from "../Provider/PrivateRoute";
+import Loader from "../Components/Loader/Loader";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch("/subscriptionData.json"),
+        hydrateFallbackElement: <Loader></Loader>,
       },
     ],
   },

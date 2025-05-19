@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { FaCheck, FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { IoArrowUndo } from "react-icons/io5";
 import { Link, useLoaderData, useParams } from "react-router";
@@ -39,22 +40,33 @@ const ServiceDetails = () => {
 
     const ratingNum = Number(rating);
     if (review.trim() === "") {
-      alert("Please enter a review.");
+      toast.error("Please enter a review.");
       return;
     }
 
+    if (!rating) {
+      toast.error("You haven't rated yet.");
+      return;
+    }
     setReviewsList([
       ...reviewsList,
       { id: Date.now(), text: review.trim(), rating: ratingNum },
     ]);
     setReview("");
     setRating("");
+
+    if (rating <= 3) {
+      toast.success("We appreciate your feedback and will strive to improve.");
+    } else {
+      toast.success("Thanks for your support—come back soon!");
+    }
   };
-  const dynamic = `${name} | Home`;
+
+  const dynamicTitle = `${name} | Home`;
 
   return (
     <section className="mt-16 mb-6 space-y-5">
-      <title>{dynamic}</title>
+      <title>{dynamicTitle}</title>
       <img
         className="rounded-2xl mt-10 mx-auto w-4/5 object-cover"
         src={banner}
