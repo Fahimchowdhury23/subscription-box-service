@@ -2,6 +2,7 @@ import React, { use, useRef, useState } from "react";
 import AuthContext from "../../Contexts/AuthContext";
 import { Link } from "react-router";
 import { MdEmail } from "react-icons/md";
+import toast from "react-hot-toast";
 
 const ResetPassword = () => {
   const { passwordReset } = use(AuthContext);
@@ -15,13 +16,15 @@ const ResetPassword = () => {
     try {
       await passwordReset(email);
       setLoading(false);
+      toast.success("Password-reset email sent!");
       window.open("https://mail.google.com", "_blank", "noopener,noreferrer");
     } catch (error) {
-      console.log(error);
+      toast.error("Something is wrong!", error?.message);
     }
   };
   return (
     <section className="py-12">
+      <title>Reset Password</title>
       <div className="w-full max-w-2xl mx-auto p-10 rounded-3xl bg-white/20 backdrop-blur-xl border border-white/50 shadow-xl">
         <h2 className="text-center text-4xl font-bold text-slate-700 drop-shadow mb-5">
           Reset Your Password

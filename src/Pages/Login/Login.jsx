@@ -15,6 +15,8 @@ const Login = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
 
+  // SignIn With Email and Password
+
   const handleLogIn = (e) => {
     e.preventDefault();
 
@@ -62,6 +64,8 @@ const Login = () => {
       });
   };
 
+  // SignIn With Google
+
   const handleGoogleSignIn = () => {
     setGoogleLoading(true);
 
@@ -79,13 +83,14 @@ const Login = () => {
       })
       .catch((error) => {
         setGoogleLoading(false);
-        toast.error("Invalid username or password", error?.message);
+        toast.error("Something went wrong", error?.message);
       })
       .finally(() => setGoogleLoading(false));
   };
 
   return (
     <section className="py-12">
+      <title>Login Page</title>
       <div className="grid grid-cols-2">
         <div className="flex flex-col w-full rounded-l-xl items-center justify-center bg-blue-700">
           <h2 className="text-center text-4xl font-bold text-white drop-shadow mb-8">

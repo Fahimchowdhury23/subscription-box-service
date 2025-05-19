@@ -90,7 +90,7 @@ const Register = () => {
     googleSignIn()
       .then((result) => {
         toast.success(
-          `Welcome, ${result?.user?.displayName}! You're logged in.`,
+          `Hey there, ${result?.user?.displayName} You just made a great choice joining us! Let's rock!.`,
           {
             duration: 3000,
             className: "text-center",
@@ -108,6 +108,7 @@ const Register = () => {
 
   return (
     <section className="py-12">
+      <title>Register Page</title>
       <h2 className="text-center text-3xl font-bold text-white drop-shadow mb-8">
         Let's Get started!
       </h2>

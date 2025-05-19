@@ -58,7 +58,7 @@ const ServiceDetails = () => {
     if (rating <= 3) {
       toast.success("We appreciate your feedback and will strive to improve.");
     } else {
-      toast.success("Thanks for your support—come back soon!");
+      toast.success("Thanks for your support!");
     }
   };
 

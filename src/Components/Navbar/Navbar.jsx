@@ -13,7 +13,6 @@ const Navbar = () => {
     signOutUser()
       .then(() => {
         toast.success("You've logged out successfully!", {
-          duration: 3000,
           className: "text-center",
         });
         navigate("/auth/login");
@@ -49,25 +48,32 @@ const Navbar = () => {
             </NavLink>
           </div>
         </div>
+
         <div>
           {user ? (
             <div className="flex items-center gap-4">
-              <div className="tooltip tooltip-bottom tooltip-info">
-                <div className="tooltip-content">
-                  <div className="font-medium text-slate-700 text-lg">
-                    {user?.displayName}
-                  </div>
-                </div>
-                <div className="avatar avatar-online">
-                  <div className="w-12 rounded-full">
-                    <img
-                      className="cursor-pointer"
-                      src={user?.photoURL}
-                      alt="profile"
-                    />
-                  </div>
-                </div>
+              <div className="flex gap-3 items-center mr-3 font-semibold text-xl">
+                {user?.displayName}
               </div>
+
+              <Link to="/my-profile">
+                <div className="tooltip tooltip-bottom tooltip-info">
+                  <div className="tooltip-content">
+                    <div className="font-medium text-slate-700 text-lg">
+                      {user?.displayName}
+                    </div>
+                  </div>
+                  <div className="avatar avatar-online">
+                    <div className="w-12 rounded-full">
+                      <img
+                        className="cursor-pointer"
+                        src={user?.photoURL}
+                        alt="profile"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </Link>
               <button
                 onClick={handleSignOut}
                 className="btn flex items-center gap-1 rounded-full bg-gradient-to-br from-[#FF6A00] to-[#F20073] shadow-lg p-5 border-none text-white text-lg font-bold"
@@ -78,7 +84,7 @@ const Navbar = () => {
           ) : (
             <Link to="/auth/login">
               <button className="btn flex items-center gap-1 p-5 rounded-full bg-gradient-to-br from-[#34D27A] to-[#0CA66E] shadow-lg border-none text-white text-lg font-bold">
-                <MdOutlineLogin /> LogIn
+                <MdOutlineLogin /> Login
               </button>
             </Link>
           )}
