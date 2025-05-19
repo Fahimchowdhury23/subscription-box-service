@@ -1,11 +1,13 @@
 import React, { use } from "react";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import AuthContext from "../../Contexts/AuthContext";
 import { LuLogOut } from "react-icons/lu";
 import { MdOutlineLogin } from "react-icons/md";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
+  const navigate = useNavigate();
 
   // Smooth Scrolling by ID
 
@@ -16,9 +18,15 @@ const Navbar = () => {
 
   const handleSignOut = () => {
     signOutUser()
-      .then(() => {})
+      .then(() => {
+        toast.success("You've logged out successfully!", {
+          duration: 3000,
+          className: "text-center",
+        });
+        navigate("/auth/login");
+      })
       .catch((error) => {
-        console.log(error);
+        toast.error("Something went wrong", error?.message);
       });
   };
 
@@ -64,12 +72,30 @@ const Navbar = () => {
         </div>
         <div>
           {user ? (
-            <button
-              onClick={handleSignOut}
-              className="btn flex items-center gap-1 rounded-full bg-gradient-to-br from-[#FF6A00] to-[#F20073] shadow-lg p-5 border-none text-white text-lg font-bold"
-            >
-              <LuLogOut /> Sign Out
-            </button>
+            <div className="flex items-center gap-4">
+              <div className="tooltip tooltip-bottom tooltip-info">
+                <div className="tooltip-content">
+                  <div className="font-medium text-slate-700 text-lg">
+                    {user?.displayName}
+                  </div>
+                </div>
+                <div className="avatar avatar-online">
+                  <div className="w-12 rounded-full">
+                    <img
+                      className="cursor-pointer"
+                      src={user?.photoURL}
+                      alt="profile"
+                    />
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={handleSignOut}
+                className="btn flex items-center gap-1 rounded-full bg-gradient-to-br from-[#FF6A00] to-[#F20073] shadow-lg p-5 border-none text-white text-lg font-bold"
+              >
+                <LuLogOut /> Sign Out
+              </button>
+            </div>
           ) : (
             <Link to="/auth/login">
               <button className="btn flex items-center gap-1 p-5 rounded-full bg-gradient-to-br from-[#34D27A] to-[#0CA66E] shadow-lg border-none text-white text-lg font-bold">

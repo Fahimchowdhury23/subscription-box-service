@@ -2,14 +2,16 @@ import React, { use, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { HiOutlineMail } from "react-icons/hi";
 import { MdLockOutline } from "react-icons/md";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import AuthContext from "../../Contexts/AuthContext";
 import { LuEye, LuEyeClosed } from "react-icons/lu";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const { signInUser, googleSignIn } = use(AuthContext);
   const [showPass, setShowPass] = useState(false);
   const navigate = useNavigate();
+  const { state } = useLocation();
 
   const handleLogIn = (e) => {
     e.preventDefault();
@@ -19,22 +21,31 @@ const Login = () => {
 
     signInUser(email, password)
       .then((result) => {
-        console.log(result.user);
-        navigate("/");
+        toast.success(`Welcome back, ${result?.user?.displayName}!`, {
+          duration: 3000,
+          className: "text-center",
+        });
+        navigate(state || "/");
       })
       .catch((error) => {
-        console.log(error);
+        toast.error("Invalid username or password", error?.message);
       });
   };
 
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then((result) => {
-        console.log(result.user);
-        navigate("/");
+        toast.success(
+          `Welcome, ${result?.user?.displayName}! You're logged in.`,
+          {
+            duration: 3000,
+            className: "text-center",
+          }
+        );
+        navigate(state || "/");
       })
       .catch((error) => {
-        console.log(error);
+        toast.error("Invalid username or password", error?.message);
       });
   };
 
@@ -43,7 +54,7 @@ const Login = () => {
       <div className="grid grid-cols-2">
         <div className="flex flex-col w-full rounded-l-xl items-center justify-center bg-blue-700">
           <h2 className="text-center text-4xl font-bold text-white drop-shadow mb-8">
-            Welcome Back!
+            {state ? "You have to Login first!" : "Welcome Back!"}
           </h2>
           <img
             src="https://i.ibb.co/WpNg6ywr/Humaaans-3-Characters.png"

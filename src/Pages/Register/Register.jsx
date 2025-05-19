@@ -6,40 +6,73 @@ import { MdLockOutline } from "react-icons/md";
 import { Link, useNavigate } from "react-router";
 import AuthContext from "../../Contexts/AuthContext";
 import { LuEye, LuEyeClosed } from "react-icons/lu";
+import toast from "react-hot-toast";
 
 const Register = () => {
-  const { createUser, googleSignIn } = use(AuthContext);
+  const { createUser, updateUser, googleSignIn } = use(AuthContext);
   const [showPass, setShowPass] = useState(false);
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
 
-    const name = e.target.name.value;
-    const photo = e.target.photo.value;
+    const displayName = e.target.name.value;
+    const photoURL = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
 
+    const profile = {
+      displayName,
+      photoURL,
+    };
+
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
-        navigate("/");
+        updateUser(profile)
+          .then(() => {
+            toast.success(
+              `Woohoo! ${result?.user?.displayName}, you're officially in. Let's have some fun!.`,
+              {
+                duration: 3000,
+                className: "text-center",
+              }
+            );
+            navigate("/");
+          })
+          .catch((error) => {
+            toast.error("Current User is not updating", error?.message);
+          });
       })
       .catch((error) => {
-        console.log(error);
+        if (error.code === "auth/email-already-in-use") {
+          toast.error("That email is already taken. Try logging in?");
+        } else if (error.code === "auth/weak-password") {
+          toast.error(
+            "Your password is too weak. Try adding numbers or symbols."
+          );
+        } else {
+          toast.error("Oops, something went wrong. Please try again.");
+        }
       });
   };
 
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then((result) => {
-        console.log(result.user);
+        toast.success(
+          `Welcome, ${result?.user?.displayName}! You're logged in.`,
+          {
+            duration: 3000,
+            className: "text-center",
+          }
+        );
         navigate("/");
       })
       .catch((error) => {
-        console.log(error);
+        toast.error("Something went wrong", error?.message);
       });
   };
+
   return (
     <section className="py-12">
       <h2 className="text-center text-3xl font-bold text-white drop-shadow mb-8">
