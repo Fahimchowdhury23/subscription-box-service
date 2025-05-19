@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <section className="w-11/12 mx-auto p-5">
+    <section className="w-11/12 mx-auto p-5 border-4 border-t-0 rounded-2xl rounded-t-none border-white/60 ">
       <nav className="flex justify-between">
         <Link to="/">
           <h1 className="text-3xl text-[#2077b6] tracking-wide font-bold cursor-pointer">

@@ -60,7 +60,7 @@ const ServiceDetails = () => {
     <section className="mt-16 mb-6 space-y-5">
       <title>{dynamic}</title>
       <img
-        className="rounded-2xl mt-10 mx-auto w-10/12 object-cover"
+        className="rounded-2xl mt-10 mx-auto w-4/5 object-cover"
         src={banner}
         alt={name}
       />
@@ -116,31 +116,31 @@ const ServiceDetails = () => {
         </div>
       </div>
 
-      <div className="text-center mt-8 space-y-4">
-        <div className="flex items-center justify-center gap-2">
-          <p className="text-4xl font-bold">{ratings}</p>
-          {[...Array(5)].map((_, i) => {
-            const diff = Math.round(ratings * 2) / 2 - i;
-            return diff >= 1 ? (
-              <FaStar key={i} size={24} className="text-yellow-400" />
-            ) : diff === 0.5 ? (
-              <FaStarHalfAlt key={i} size={24} className="text-yellow-400" />
-            ) : (
-              <FaRegStar key={i} size={24} className="text-yellow-400" />
-            );
-          })}
-        </div>
-        <p className="text-xl font-medium">
-          Total : {number_of_reviews} Reviews
-        </p>
-      </div>
-
       {/* Review Section */}
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-4">
-        <div className="w-11/12 mx-auto mt-6 p-6 rounded-2xl border-1 border-sky-500">
+      <div className="grid grid-cols-1 lg:grid-cols-3 items-center">
+        <div className="text-center space-y-4">
+          <div className="flex items-center justify-center gap-2">
+            <p className="text-4xl font-bold">{ratings}</p>
+            {[...Array(5)].map((_, i) => {
+              const diff = Math.round(ratings * 2) / 2 - i;
+              return diff >= 1 ? (
+                <FaStar key={i} size={24} className="text-yellow-400" />
+              ) : diff === 0.5 ? (
+                <FaStarHalfAlt key={i} size={24} className="text-yellow-400" />
+              ) : (
+                <FaRegStar key={i} size={24} className="text-yellow-400" />
+              );
+            })}
+          </div>
+          <p className="text-xl font-medium">
+            Based on {number_of_reviews} reviews
+          </p>
+        </div>
+
+        <div className="w-10/12 mt-6 p-6 rounded-2xl border-1 border-sky-500">
           <h2 className="text-xl font-semibold mb-4 text-center">
-            Add a Review
+            Write a Review
           </h2>
           <form onSubmit={handleSubmit}>
             <textarea
@@ -167,12 +167,11 @@ const ServiceDetails = () => {
             </button>
           </form>
         </div>
-
         {/* Show Review */}
 
         <div className="mt-6 text-center">
           <h3 className="text-lg font-bold mb-2 underline">
-            Submitted Reviews :
+            Customer Reviews :
           </h3>
           {reviewsList.length === 0 && (
             <p className="font-medium text-2xl">No reviews yet.</p>
