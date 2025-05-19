@@ -1,10 +1,43 @@
-import React from "react";
+import React, { use, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { HiOutlineMail } from "react-icons/hi";
 import { MdLockOutline } from "react-icons/md";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import AuthContext from "../../Contexts/AuthContext";
+import { LuEye, LuEyeClosed } from "react-icons/lu";
 
 const Login = () => {
+  const { signInUser, googleSignIn } = use(AuthContext);
+  const [showPass, setShowPass] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogIn = (e) => {
+    e.preventDefault();
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    signInUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        console.log(result.user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <section className="py-12">
       <div className="grid grid-cols-2">
@@ -18,15 +51,21 @@ const Login = () => {
           />
         </div>
 
-        {/* Login Form */}
-
-        <div className="w-full p-10 rounded-r-3xl bg-white/20 backdrop-blur-xl border border-white/50 shadow-xl">
+        <div className="w-full p-10 border-l-0 rounded-r-3xl bg-white/20 backdrop-blur-xl border border-white/50 shadow-xl">
           <div className="w-10/12 mx-auto">
-            <form className="flex flex-col gap-3">
-              <button className="btn rounded-2xl font-semibold bg-sky-600 hover:bg-blue-500 text-white border-none transition backdrop-blur-xl">
-                <FcGoogle size={24} className="bg-white rounded-full p-0.5" />
-                Continue with Google
-              </button>
+            {/* Google Sign In */}
+
+            <button
+              onClick={handleGoogleSignIn}
+              className="btn rounded-2xl w-full font-semibold bg-sky-600 hover:bg-blue-500 text-white border-none transition backdrop-blur-xl"
+            >
+              <FcGoogle size={24} className="bg-white rounded-full p-0.5" />
+              Continue with Google
+            </button>
+
+            {/* Login Form */}
+
+            <form onSubmit={handleLogIn} className="flex flex-col gap-3">
               <div className="flex items-center py-3">
                 <p className="border-b-2 w-[20%] border-gray-500"></p>
                 <p className="text-center w-[60%] text-gray-500 ">
@@ -35,27 +74,47 @@ const Login = () => {
                 <p className="border-b-2 w-[20%] border-gray-500"></p>
               </div>
 
+              {/* Email Field*/}
+
               <label className="flex items-center gap-2 text-blue-600/70 ">
                 <HiOutlineMail size={24} />
                 Email
               </label>
               <input
                 type="email"
+                name="email"
+                required
                 className="px-4 py-3 rounded-xl bg-white/60 text-sky-700 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-white/70"
                 placeholder="Email address"
               />
               <label className="flex items-center gap-2 text-blue-600/80 ">
                 <MdLockOutline size={24} /> Password
               </label>
-              <input
-                type="password"
-                className="px-4 py-3 rounded-xl bg-white/60 text-sky-700 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-white/70"
-                placeholder="Password"
-              />
+
+              {/* Password Field */}
+
+              <div className="relative">
+                <input
+                  type={showPass ? "text" : "password"}
+                  name="password"
+                  required
+                  className="px-4 py-3 w-full rounded-xl bg-white/60 text-sky-700 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-white/70"
+                  placeholder="Password"
+                />
+                <button
+                  onClick={() => setShowPass(!showPass)}
+                  className="absolute top-3 right-5 cursor-pointer text-sky-700  text-2xl"
+                >
+                  {showPass ? <LuEye></LuEye> : <LuEyeClosed></LuEyeClosed>}
+                </button>
+              </div>
               <div className="flex justify-between items-center">
-                <a className="text-sm text-blue-600/80 cursor-pointer hover:underline">
+                <Link
+                  to="/auth/reset-password"
+                  className="text-sm text-blue-600/80 cursor-pointer hover:underline"
+                >
                   Forgotten password?
-                </a>
+                </Link>
               </div>
               <button
                 type="submit"

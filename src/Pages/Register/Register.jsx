@@ -1,11 +1,45 @@
-import React from "react";
+import React, { use, useState } from "react";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { HiOutlineMail, HiOutlinePhotograph } from "react-icons/hi";
 import { MdLockOutline } from "react-icons/md";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import AuthContext from "../../Contexts/AuthContext";
+import { LuEye, LuEyeClosed } from "react-icons/lu";
 
 const Register = () => {
+  const { createUser, googleSignIn } = use(AuthContext);
+  const [showPass, setShowPass] = useState(false);
+  const navigate = useNavigate();
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+
+    const name = e.target.name.value;
+    const photo = e.target.photo.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        console.log(result.user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <section className="py-12">
       <h2 className="text-center text-3xl font-bold text-white drop-shadow mb-8">
@@ -13,12 +47,17 @@ const Register = () => {
       </h2>
 
       <div className="w-full max-w-2xl p-10 mx-auto rounded-3xl bg-white/20 backdrop-blur-xl border border-white/50 shadow-xl">
-        <form className="flex flex-col gap-3">
-          <button className="btn rounded-2xl font-semibold bg-sky-600 hover:bg-blue-500 text-white border-none transition backdrop-blur-xl">
-            <FcGoogle size={24} className="bg-white rounded-full p-0.5" />
-            Continue with Google
-          </button>
+        {/* Google Sign In */}
 
+        <button
+          onClick={handleGoogleSignIn}
+          className="btn rounded-2xl w-full font-semibold bg-sky-600 hover:bg-blue-500 text-white border-none transition backdrop-blur-xl"
+        >
+          <FcGoogle size={24} className="bg-white rounded-full p-0.5" />
+          Continue with Google
+        </button>
+
+        <form onSubmit={handleRegister} className="flex flex-col gap-3">
           <div className="flex items-center py-3">
             <p className="border-b-2 w-[20%] border-gray-500"></p>
             <p className="text-center w-[60%] text-gray-600 ">
@@ -27,6 +66,8 @@ const Register = () => {
             <p className="border-b-2 w-[20%] border-gray-500"></p>
           </div>
 
+          {/* Name Field */}
+
           <label className="flex items-center gap-2 text-blue-600/70 ">
             <FaRegCircleUser size={24} />
             Username
@@ -34,20 +75,27 @@ const Register = () => {
 
           <input
             type="text"
+            name="name"
+            required
             className="px-4 py-3 rounded-xl bg-white/60 text-sky-700 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-white/70"
             placeholder="Your Full Name"
           />
+
+          {/* Photo URL Field */}
 
           <label className="flex items-center gap-2 text-blue-600/70 ">
             <HiOutlinePhotograph size={24} />
             Photo URL
           </label>
-
           <input
             type="text"
+            name="photo"
+            required
             className="px-4 py-3 rounded-xl bg-white/60 text-sky-700 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-white/70"
             placeholder="Your Photo URL"
           />
+
+          {/* Email Field */}
 
           <label className="flex items-center gap-2 text-blue-600/70 ">
             <HiOutlineMail size={24} />
@@ -55,18 +103,32 @@ const Register = () => {
           </label>
           <input
             type="email"
+            name="email"
+            required
             className="px-4 py-3 rounded-xl bg-white/60 text-sky-700 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-white/70"
             placeholder="Email address"
           />
 
+          {/* Password Field */}
+
           <label className="flex items-center gap-2 text-blue-600/80 ">
             <MdLockOutline size={24} /> Password
           </label>
-          <input
-            type="password"
-            className="px-4 py-3 rounded-xl bg-white/60 text-sky-700 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-white/70"
-            placeholder="Password"
-          />
+          <div className="relative">
+            <input
+              type={showPass ? "text" : "password"}
+              name="password"
+              required
+              className="px-4 py-3 w-full rounded-xl bg-white/60 text-sky-700 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-white/70"
+              placeholder="Password"
+            />
+            <button
+              onClick={() => setShowPass(!showPass)}
+              className="absolute top-3 right-5 cursor-pointer text-sky-700  text-2xl"
+            >
+              {showPass ? <LuEye></LuEye> : <LuEyeClosed></LuEyeClosed>}
+            </button>
+          </div>
 
           <button
             type="submit"
@@ -75,15 +137,13 @@ const Register = () => {
             Register
           </button>
         </form>
-        <p className="mt-6 justify-center flex gap-2 text-blue-500">
+
+        <Link
+          to="/auth/login"
+          className="font-semibold mt-6 flex justify-center hover:underline text-blue-600"
+        >
           Already have an account?
-          <Link
-            to="/auth/login"
-            className="font-semibold hover:underline text-blue-600"
-          >
-            Sign In
-          </Link>
-        </p>
+        </Link>
       </div>
     </section>
   );

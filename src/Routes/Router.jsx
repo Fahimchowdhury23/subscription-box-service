@@ -9,6 +9,7 @@ import AuthenticationLayout from "../Layouts/AuthenticationLayout/Authentication
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import ServiceDetails from "../Pages/Services/ServiceDetails";
+import ResetPassword from "../Pages/ResetPassword/ResetPassword";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/auth/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/auth/reset-password",
+        element: <ResetPassword></ResetPassword>,
       },
     ],
   },

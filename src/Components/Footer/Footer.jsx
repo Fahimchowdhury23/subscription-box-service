@@ -9,7 +9,6 @@ const Footer = () => {
     const section = document.getElementById(sectionName);
     section?.scrollIntoView({ behavior: "smooth" });
   };
-
   return (
     <section
       className={`space-y-6 p-20 flex flex-col bg-gradient-to-r from-[#fffeff] via-[#94eae8]  to-white items-center`}
@@ -34,7 +33,6 @@ const Footer = () => {
         >
           Our Services
         </a>
-
         <a
           onClick={() => {
             handleScroll("success");

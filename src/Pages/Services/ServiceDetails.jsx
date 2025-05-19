@@ -42,10 +42,6 @@ const ServiceDetails = () => {
       alert("Please enter a review.");
       return;
     }
-    if (!ratingNum || ratingNum < 1 || ratingNum > 5) {
-      alert("Please enter a rating between 1 and 5.");
-      return;
-    }
 
     setReviewsList([
       ...reviewsList,
@@ -116,8 +112,6 @@ const ServiceDetails = () => {
         </div>
       </div>
 
-      {/* Review Section */}
-
       <div className="grid grid-cols-1 lg:grid-cols-3 items-center">
         <div className="text-center space-y-4">
           <div className="flex items-center justify-center gap-2">
@@ -138,24 +132,29 @@ const ServiceDetails = () => {
           </p>
         </div>
 
-        <div className="w-10/12 mt-6 p-6 rounded-2xl border-1 border-sky-500">
+        {/* Review Section */}
+
+        <div className="w-10/12 mt-6 px-6 py-4 rounded-2xl border-1 border-sky-500">
           <h2 className="text-xl font-semibold mb-4 text-center">
             Write a Review
           </h2>
           <form onSubmit={handleSubmit}>
             <textarea
               placeholder="Write your review"
-              className="w-full border text-sky-600 border-gray-300 rounded-xl p-2 mb-3"
+              className="w-full border text-sky-600 border-gray-300 rounded-xl p-2 mb-3 [resize:none]"
               rows={6}
               value={review}
               onChange={(e) => setReview(e.target.value)}
             />
             <input
               type="number"
-              min="1"
+              min="0"
               max="5"
               placeholder="Rating (1-5)"
-              className="w-full border text-sky-600 border-gray-300 rounded-xl p-2 mb-3"
+              className="w-full border text-sky-600 border-gray-300 rounded-xl p-2 mb-3 
+              [&::-webkit-inner-spin-button]:hidden
+              [&::-webkit-outer-spin-button]:hidden
+              [appearance:textfield]"
               value={rating}
               onChange={(e) => setRating(e.target.value)}
             />
@@ -167,6 +166,7 @@ const ServiceDetails = () => {
             </button>
           </form>
         </div>
+
         {/* Show Review */}
 
         <div className="mt-6 text-center">
@@ -188,13 +188,9 @@ const ServiceDetails = () => {
                     {[...Array(5)].map((_, i) => {
                       const diff = Math.round(rating) - i;
                       return diff >= 1 ? (
-                        <FaStar key={i} size={24} className="text-yellow-400" />
+                        <FaStar key={i} className="text-yellow-400" />
                       ) : (
-                        <FaRegStar
-                          key={i}
-                          size={24}
-                          className="text-yellow-400"
-                        />
+                        <FaRegStar key={i} className="text-yellow-400" />
                       );
                     })}
                   </div>
@@ -206,7 +202,7 @@ const ServiceDetails = () => {
       </div>
 
       <Link to="/">
-        <button className="btn btn-secondary mt-6 text-white border-none">
+        <button className="btn btn-secondary ml-3 mt-6 text-white border-none">
           <IoArrowUndo />
           Explore More
         </button>

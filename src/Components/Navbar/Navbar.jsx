@@ -1,12 +1,25 @@
-import React from "react";
+import React, { use } from "react";
 import { Link, NavLink } from "react-router";
+import AuthContext from "../../Contexts/AuthContext";
+import { LuLogOut } from "react-icons/lu";
+import { MdOutlineLogin } from "react-icons/md";
 
 const Navbar = () => {
+  const { user, signOutUser } = use(AuthContext);
+
   // Smooth Scrolling by ID
 
   const handleScroll = (sectionName) => {
     const section = document.getElementById(sectionName);
     section?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleSignOut = () => {
+    signOutUser()
+      .then(() => {})
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -22,7 +35,6 @@ const Navbar = () => {
             <NavLink className="nav-link" to="/">
               Home
             </NavLink>
-
             <a
               onClick={() => {
                 handleScroll("services");
@@ -51,11 +63,20 @@ const Navbar = () => {
           </div>
         </div>
         <div>
-          <Link to="/auth/login">
-            <button className="btn btn-primary p-5 border-none text-white text-lg font-bold">
-              Login
+          {user ? (
+            <button
+              onClick={handleSignOut}
+              className="btn flex items-center gap-1 rounded-full bg-gradient-to-br from-[#FF6A00] to-[#F20073] shadow-lg p-5 border-none text-white text-lg font-bold"
+            >
+              <LuLogOut /> Sign Out
             </button>
-          </Link>
+          ) : (
+            <Link to="/auth/login">
+              <button className="btn flex items-center gap-1 p-5 rounded-full bg-gradient-to-br from-[#34D27A] to-[#0CA66E] shadow-lg border-none text-white text-lg font-bold">
+                <MdOutlineLogin /> LogIn
+              </button>
+            </Link>
+          )}
         </div>
       </nav>
     </section>

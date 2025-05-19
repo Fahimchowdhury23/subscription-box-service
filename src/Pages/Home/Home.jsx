@@ -7,7 +7,7 @@ import Slider from "../Slider/Slider";
 const Home = () => {
   return (
     <section className="pt-8">
-      <h1 className="italic text-5xl pb-7 font-extrabold text-center tracking-wide select-none animate-pulse transition duration-500 ease-in-out">
+      <h1 className="italic text-5xl pb-7 font-extrabold text-center tracking-wide animate-pulse transition duration-500 ease-in-out ">
         Your interests, delivered.
       </h1>
       <Slider></Slider>
