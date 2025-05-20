@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "name": "Outdoor Gear Box",
     "thumbnail": "https://i.ibb.co/Mx3cfY4g/outdoor.webp",
     "banner": "https://i.ibb.co/gsjKWD4/outdoor-banner.jpg",
@@ -23,7 +23,7 @@
     "premium": false
   },
   {
-    "id": 2,
+    "id": "2",
     "name": "Used Books",
     "thumbnail": "https://i.ibb.co/gbnvgbTf/used-books-monthly.webp",
     "banner": "https://i.ibb.co/RG5V8zhN/books-banner.webp",
@@ -46,7 +46,7 @@
     "premium": true
   },
   {
-    "id": 3,
+    "id": "3",
     "name": "Gaming Gear Box",
     "thumbnail": "https://i.ibb.co/M5GQMYcX/Gaming.jpg",
     "banner": "https://i.ibb.co/TxbbKscB/game-banner.jpg",
@@ -69,7 +69,7 @@
     "premium": false
   },
   {
-    "id": 4,
+    "id": "4",
     "name": "Rare Coffees",
     "thumbnail": "https://i.ibb.co/vxKwFdVz/MyBean.webp",
     "banner": "https://i.ibb.co/BV7p1GJZ/mybean.webp",
@@ -92,7 +92,7 @@
     "premium": true
   },
   {
-    "id": 5,
+    "id": "5",
     "name": "Snacks Box",
     "thumbnail": "https://i.ibb.co/6JnxrY3V/snacks.webp",
     "banner": "https://i.ibb.co/TxYsFbZc/snacks-banner.jpg",
@@ -115,7 +115,7 @@
     "premium": false
   },
   {
-    "id": 6,
+    "id": "6",
     "name": "Mix Fruit Box",
     "thumbnail": "https://i.ibb.co/yFWZdZVk/mix-box.webp",
     "banner": "https://i.ibb.co/SXv6gKfv/mix-box-banner.jpg",
@@ -138,7 +138,7 @@
     "premium": true
   },
   {
-    "id": 7,
+    "id": "7",
     "name": "Animal Foods",
     "thumbnail": "https://i.ibb.co/4RKMHSrw/dog.webp",
     "banner": "https://i.ibb.co/Gf0T4QT0/dog-banner.webp",
@@ -161,7 +161,7 @@
     "premium": false
   },
   {
-    "id": 8,
+    "id": "8",
     "name": "Mystery Toy Box",
     "thumbnail": "https://i.ibb.co/Jjz7xy7j/mystery-toy-box.webp",
     "banner": "https://i.ibb.co/4ggTHhSY/toy-box-banner.webp",
@@ -184,7 +184,7 @@
     "premium": false
   },
   {
-    "id": 9,
+    "id": "9",
     "name": "Perfume Box",
     "thumbnail": "https://i.ibb.co/Z6Lz7qqJ/perfume.webp",
     "banner": "https://i.ibb.co/fYjxXDRX/perfume-banner.webp",

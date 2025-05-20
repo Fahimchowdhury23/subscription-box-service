@@ -21,7 +21,8 @@ const ErrorPage = () => {
           src="https://i.ibb.co/r2zjmYpc/error.jpg"
           alt="404 Error!"
         />
-        <div className="flex mt-6 gap-5">
+
+        <div className="flex mt-6 gap-5 text-white">
           <button
             className="cursor-pointer px-3 py-2 font-medium text-lg rounded-xl bg-sky-500"
             onClick={() => {
@@ -31,10 +32,10 @@ const ErrorPage = () => {
               );
             }}
           >
-            Go back Home
+            Back to home
           </button>
           <button
-            className="cursor-pointer px-3 py-2 font-medium text-lg rounded-xl bg-green-500"
+            className="cursor-pointer px-3 py-2 ml-8 font-medium text-lg rounded-xl bg-green-500"
             onClick={() => {
               toast.success("Let's pick up right where you left off! ⏳", {
                 duration: 3000,

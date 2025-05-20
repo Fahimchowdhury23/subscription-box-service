@@ -11,14 +11,13 @@ const ServiceDetails = () => {
   const [reviewsList, setReviewsList] = useState([]);
 
   const { id } = useParams();
-  const convertedId = parseInt(id);
 
   const serviceData = useLoaderData();
 
   useEffect(() => {
-    const clicked = serviceData.find((service) => service.id === convertedId);
+    const clicked = serviceData.find((service) => service.id === id);
     setDetails(clicked);
-  }, [serviceData, convertedId]);
+  }, [serviceData, id]);
 
   const {
     thumbnail,
