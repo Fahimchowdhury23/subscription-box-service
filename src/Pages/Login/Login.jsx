@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { use, useRef, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { HiOutlineMail } from "react-icons/hi";
 import { MdLockOutline } from "react-icons/md";
@@ -6,12 +6,15 @@ import { Link, useLocation, useNavigate } from "react-router";
 import AuthContext from "../../Contexts/AuthContext";
 import { LuEye, LuEyeClosed } from "react-icons/lu";
 import toast from "react-hot-toast";
+import ResetContext from "../../Contexts/ResetContext";
 
 const Login = () => {
   const { signInUser, googleSignIn } = use(AuthContext);
+  const { setResetEmail } = use(ResetContext);
   const [showPass, setShowPass] = useState(false);
   const [loading, setLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
+  const emailRef = useRef();
   const navigate = useNavigate();
   const { state } = useLocation();
 
@@ -88,6 +91,21 @@ const Login = () => {
       .finally(() => setGoogleLoading(false));
   };
 
+  const handleForgetLink = () => {
+    const email = emailRef.current.value;
+    if (!email) {
+      toast.error("Please enter your email first.");
+      return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+    setResetEmail(email);
+    navigate("/auth/reset-password");
+  };
+
   return (
     <section className="py-12">
       <title>Login Page</title>
@@ -141,6 +159,7 @@ const Login = () => {
                 type="email"
                 name="email"
                 autoComplete="email"
+                ref={emailRef}
                 required
                 className="px-4 py-3 rounded-xl bg-white/60 text-sky-700 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-white/70"
                 placeholder="Email address"
@@ -170,14 +189,14 @@ const Login = () => {
                   {showPass ? <LuEye></LuEye> : <LuEyeClosed></LuEyeClosed>}
                 </button>
               </div>
-              <div className="flex justify-between items-center">
-                <Link
-                  to="/auth/reset-password"
-                  className="text-sm text-blue-600/80 cursor-pointer hover:underline"
-                >
-                  Forgotten password?
-                </Link>
-              </div>
+
+              <a
+                onClick={handleForgetLink}
+                className="text-sm text-blue-600/80 cursor-pointer hover:underline"
+              >
+                Forgotten password?
+              </a>
+
               <button
                 type="submit"
                 className="w-full btn py-3 rounded-2xl border-none bg-sky-600/80 hover:bg-sky-600 text-white font-medium transition backdrop-blur-xl"
@@ -189,6 +208,7 @@ const Login = () => {
                 )}
               </button>
             </form>
+
             <p className="mt-6 justify-center flex gap-2 text-blue-500">
               Are you new here?
               <Link

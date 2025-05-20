@@ -51,8 +51,8 @@ const Navbar = () => {
 
         <div>
           {user ? (
-            <div className="flex items-center gap-4">
-              <div className="flex gap-3 items-center mr-3 font-semibold text-xl">
+            <div className="flex items-center gap-3">
+              <div className="flex items-center mr-3 font-semibold text-xl">
                 {user?.displayName}
               </div>
 

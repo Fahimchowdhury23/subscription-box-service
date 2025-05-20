@@ -3,9 +3,11 @@ import AuthContext from "../../Contexts/AuthContext";
 import { Link } from "react-router";
 import { MdEmail } from "react-icons/md";
 import toast from "react-hot-toast";
+import ResetContext from "../../Contexts/ResetContext";
 
 const ResetPassword = () => {
   const { passwordReset } = use(AuthContext);
+  const { resetEmail } = use(ResetContext);
   const [loading, setLoading] = useState(false);
   const emailRef = useRef();
 
@@ -22,6 +24,7 @@ const ResetPassword = () => {
       toast.error("Something is wrong!", error?.message);
     }
   };
+
   return (
     <section className="py-12">
       <title>Reset Password</title>
@@ -37,6 +40,7 @@ const ResetPassword = () => {
             type="email"
             name="email"
             ref={emailRef}
+            defaultValue={resetEmail}
             required
             className="px-4 py-3 rounded-xl bg-white/60 text-sky-700 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-white/70"
             placeholder="Your Email address"
