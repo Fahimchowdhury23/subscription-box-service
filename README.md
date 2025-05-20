@@ -1,12 +1,90 @@
-# React + Vite
+# 📦 InterestInBox - Subscription Box Service
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **InterestInBox**, a full-featured web application that delivers carefully curated subscription boxes to users based on their passions — from books, coffee, and gaming to outdoor adventures and pet care.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🌐 [Live Site](https://your-live-site-url.com)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🎯 Purpose
+
+**InterestInBox** was built to offer users a seamless experience in discovering and subscribing to various niche-based boxes. Whether you're a reader, gamer, coffee lover, or explorer, this platform connects you with high-quality, personalized items delivered monthly or yearly.
+
+---
+
+## ✨ Key Features
+
+- 🔐 **Private Routes** for Premium Content
+- 📦 Multiple **Subscription Categories**
+- 🔥 **Interactive UI** using React + Tailwind CSS
+- 🔁 **Reusable Components** for scalability
+- 🧑‍💼 **User Authentication** via Firebase
+- 🧭 **Protected Routes & Role-Based Access**
+- 📊 **Animated Counters & Ratings**
+- 🌐 **Responsive Design**
+
+---
+
+## 🧰 Tech Stack
+
+- **React 19**
+- **Firebase**
+- **React Router v7**
+- **Tailwind CSS v4 + DaisyUI**
+- **Vite**
+- **ESLint**
+
+---
+
+## 🚧 Error Handling Routes
+
+Our application includes dedicated routes to handle errors gracefully:
+
+- 🚫 404 - Page Not Found:
+  This route catches all undefined URLs and displays a user-friendly "Page Not Found" message, helping users navigate back to valid pages.
+
+---
+
+## 📦 NPM Packages Used
+
+| Package           | Purpose                           |
+| ----------------- | --------------------------------- |
+| `firebase`        | Authentication & database         |
+| `react-router`    | Routing & private routes          |
+| `swiper`          | Touch slider / carousel           |
+| `tailwindcss`     | Styling & utility classes         |
+| `daisyui`         | Ready-made Tailwind UI components |
+| `react-countup`   | Animated number counter           |
+| `react-icons`     | Icon library                      |
+| `react-hot-toast` | Toast notifications               |
+| `eslint`          | Linting and formatting            |
+
+---
+
+## 📸 App Screenshots
+
+### 🔐 Login Page
+
+![Login](https://i.ibb.co/yntVWQ1w/login.png)
+
+### 📝 Register Page
+
+![Register](https://i.ibb.co/TxDtCnK7/register.png)
+
+### 🔁 Reset Password
+
+![Reset Password](https://i.ibb.co/nNT3kXB6/reset-password.png)
+
+### 🏠 Homepage
+
+![Homepage](https://i.ibb.co/9kYRCRFT/banner.png)
+
+### 📂 Product Categories
+
+![Product Categories](https://i.ibb.co/tT8Pm1DC/products.png)
+
+### 👤 User Profile
+
+![User Profile](https://i.ibb.co/SDHmsPhK/profile.png)

@@ -8,7 +8,7 @@ import ScrollToTop from "../../Components/ScrollToTop/ScrollToTop";
 const HomeLayout = () => {
   const { state } = useNavigation();
   return (
-    <section className="bg-gradient-to-b min-h-screen from-[#87ceeb] to-white">
+    <section className="bg-gradient-to-b from-[#87ceeb] to-white">
       <header>
         <Navbar></Navbar>
       </header>

@@ -16,12 +16,12 @@ const AddToCart = () => {
     setCart(addToCart);
   }, [serviceData, id]);
 
-  const totalPrice = price * count;
+  const totalPrice = (price * count).toFixed(2);
   const discount = (totalPrice * 0.2).toFixed(2);
-  const shippingCharge = count * 2;
+  const shippingCharge = count * 5;
   const afterDiscount = (totalPrice + shippingCharge - discount).toFixed(2);
 
-  const dynamicTitle = `${name} | My Cart`;
+  const dynamicTitle = `My Cart | ${name}`;
 
   return (
     <section className="bg-white my-12 p-12 w-11/12 rounded-2xl mx-auto">
@@ -104,8 +104,9 @@ const AddToCart = () => {
             </p>
 
             <p>
-              Your {count} subscription items will continue to ship and bill
-              <span className="font-bold italic underline"> {frequency}</span>
+              Your <span className="font-bold">{count}</span> subscription items
+              will continue to ship and bill
+              <span className="font-bold italic"> {frequency}</span>
             </p>
           </div>
 

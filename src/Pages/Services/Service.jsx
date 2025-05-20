@@ -15,7 +15,7 @@ const Service = ({ subscription }) => {
   } = subscription;
 
   return (
-    <section className="bg-white p-3 rounded-2xl flex flex-col">
+    <section className="bg-white p-4 rounded-2xl flex flex-col">
       <div className="bg-[#f5deb3] text-left rounded-xl mb-4 flex-1">
         <img
           className="rounded-xl rounded-bl-none rounded-br-none object-cover w-full"

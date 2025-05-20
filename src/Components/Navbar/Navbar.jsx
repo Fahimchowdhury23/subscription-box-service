@@ -23,7 +23,7 @@ const Navbar = () => {
   };
 
   return (
-    <section className="w-11/12 mx-auto p-5 border-4 border-t-0 rounded-2xl rounded-t-none border-white/60 ">
+    <section className="w-11/12 mx-auto p-5 border-3 border-t-0 rounded-2xl rounded-t-none border-white/60">
       <nav className="flex justify-between">
         <div className="flex items-center gap-3">
           <img
@@ -43,6 +43,10 @@ const Navbar = () => {
               Home
             </NavLink>
 
+            <NavLink className="nav-link" to="/aboutUs">
+              About Us
+            </NavLink>
+
             <NavLink className="nav-link" to="/my-profile">
               My Profile
             </NavLink>
@@ -56,24 +60,27 @@ const Navbar = () => {
                 {user?.displayName}
               </div>
 
-              <Link to="/my-profile">
-                <div className="tooltip tooltip-bottom tooltip-info">
-                  <div className="tooltip-content">
-                    <div className="font-medium text-slate-700 text-lg">
-                      {user?.displayName}
+              <div>
+                <Link to="/my-profile">
+                  <div className="tooltip tooltip-bottom tooltip-info">
+                    <div className="tooltip-content">
+                      <div className="font-medium text-slate-700 text-lg">
+                        {user?.displayName}
+                      </div>
+                    </div>
+                    <div className="avatar avatar-online">
+                      <div className="w-12 rounded-full">
+                        <img
+                          className="cursor-pointer"
+                          src={user?.photoURL}
+                          alt="profile"
+                        />
+                      </div>
                     </div>
                   </div>
-                  <div className="avatar avatar-online">
-                    <div className="w-12 rounded-full">
-                      <img
-                        className="cursor-pointer"
-                        src={user?.photoURL}
-                        alt="profile"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </Link>
+                </Link>
+              </div>
+
               <button
                 onClick={handleSignOut}
                 className="btn flex items-center gap-1 rounded-full bg-gradient-to-br from-[#FF6A00] to-[#F20073] shadow-lg p-5 border-none text-white text-lg font-bold"

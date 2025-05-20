@@ -44,6 +44,7 @@ const Profile = () => {
           className: "text-center",
         });
         setLoading(false);
+        e.target.reset();
         window.scrollTo({
           top: 0,
           behavior: "smooth",
@@ -51,6 +52,7 @@ const Profile = () => {
       })
       .catch((error) => {
         toast.error("Current User is not updating", error?.message);
+        setLoading(false);
       });
   };
 

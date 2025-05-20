@@ -4,9 +4,7 @@ import { Link, NavLink } from "react-router";
 
 const Footer = () => {
   return (
-    <section
-      className={`space-y-6 p-20 flex flex-col bg-gradient-to-r from-[#fffeff] via-[#94eae8]  to-white items-center`}
-    >
+    <section className="space-y-6 p-20 flex flex-col bg-gradient-to-r from-[#b0d4f1] via-[#91c8f7] to-[#c1e0fc] items-center">
       <div>
         <Link to="/">
           <h1 className="text-3xl text-[#2077b6] tracking-wide font-bold cursor-pointer">
@@ -15,9 +13,12 @@ const Footer = () => {
         </Link>
       </div>
 
-      <div className="flex gap-4">
+      <div className="flex gap-3">
         <NavLink className="footer-link" to="/">
           Home
+        </NavLink>
+        <NavLink className="footer-link" to="/aboutUs">
+          About Us
         </NavLink>
 
         <NavLink className="footer-link" to="/my-profile">

@@ -12,6 +12,7 @@ import PrivateRoute from "../Provider/PrivateRoute";
 import Loader from "../Components/Loader/Loader";
 import DetailsNotFound from "../Pages/Services/DetailsNotFound";
 import AddToCart from "../Pages/Services/AddToCart";
+import AboutUs from "../Pages/AboutUs/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,14 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-
+      {
+        path: "aboutUs",
+        element: (
+          <PrivateRoute>
+            <AboutUs></AboutUs>
+          </PrivateRoute>
+        ),
+      },
       {
         path: "details/:id",
         element: (

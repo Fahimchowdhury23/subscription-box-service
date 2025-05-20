@@ -69,8 +69,6 @@ const AuthProvider = ({ children }) => {
     passwordReset,
   };
 
-  console.log(user);
-
   return <AuthContext value={userInfo}>{children}</AuthContext>;
 };
 
