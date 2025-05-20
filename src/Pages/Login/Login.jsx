@@ -152,11 +152,11 @@ const Login = () => {
 
             <form onSubmit={handleLogIn} className="flex flex-col gap-3">
               <div className="flex items-center py-3">
-                <p className="border-b-2 w-[20%] border-gray-500"></p>
-                <p className="text-center w-[60%] text-gray-500 ">
+                <p className="border-b-2 w-[15%] lg:w-[20%] border-gray-500"></p>
+                <p className="text-center w-[70%] lg:w-[60%] text-gray-500 ">
                   Or Continue with Email / Password
                 </p>
-                <p className="border-b-2 w-[20%] border-gray-500"></p>
+                <p className="border-b-2 w-[15%] lg:w-[20%] border-gray-500"></p>
               </div>
 
               {/* Email Field*/}
