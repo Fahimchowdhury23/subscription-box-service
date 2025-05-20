@@ -4,7 +4,7 @@ Welcome to **InterestInBox**, a full-featured web application that delivers care
 
 ## 🚀 Live Demo
 
-🌐 [Live Site](https://subscription-service-2346.web.app/) (Hold Ctrl (or Command on Mac) and click the link to open it in a new tab.)
+🌐 [Live Site](https://subscription-service-2346.web.app/) (_Hold Ctrl (or Command on Mac) and click the link to open it in a new tab._)
 
 ---
 
