@@ -64,8 +64,9 @@ const Navbar = () => {
                 <Link to="/my-profile">
                   <div className="tooltip tooltip-bottom tooltip-info">
                     <div className="tooltip-content">
-                      <div className="font-medium text-slate-700 text-lg">
-                        {user?.displayName}
+                      <div className="font-medium text-slate-700">
+                        <p>{user?.displayName}</p>
+                        <p>{user?.email}</p>
                       </div>
                     </div>
                     <div className="avatar avatar-online">

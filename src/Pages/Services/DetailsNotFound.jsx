@@ -17,6 +17,7 @@ const DetailsNotFound = () => {
 
   return (
     <div className="p-8 my-16 bg-white/40 mx-auto w-[40%] text-center rounded-2xl flex flex-col gap-8">
+      <title>Details Not Found</title>
       <h1 className="text-3xl text-slate-700 font-semibold">
         This product /{errorUrlNo} doesn't exist
       </h1>

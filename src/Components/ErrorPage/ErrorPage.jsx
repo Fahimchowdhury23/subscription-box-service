@@ -15,6 +15,7 @@ const ErrorPage = () => {
 
   return (
     <div className="bg-gradient-to-b min-h-screen from-[#87ceeb] to-white">
+      <title>Page Not Found</title>
       <div className="flex flex-col pt-20 my-auto justify-center items-center">
         <img
           className="rounded-2xl h-130"

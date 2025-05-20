@@ -4,6 +4,7 @@ import { Link } from "react-router";
 const AboutUs = () => {
   return (
     <div className="my-12 w-10/12 mx-auto">
+      <title>About Us</title>
       <div className="p-5">
         <div className="flex justify-center">
           <img

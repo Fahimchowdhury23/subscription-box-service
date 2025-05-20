@@ -114,7 +114,7 @@ const Profile = () => {
                   City: <span className="ml-3 text-slate-700">Geneva</span>
                 </li>
                 <li>
-                  Last LogIn At :
+                  Last Login At :
                   <span className="ml-3 font-medium text-slate-700">{`${day} ${monthName} ${year} , ${time}`}</span>
                 </li>
                 <li>

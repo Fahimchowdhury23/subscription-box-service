@@ -30,8 +30,18 @@ const Login = () => {
     const hasLowercase = /[a-z]/.test(password);
     const hasDigit = /\d/.test(password);
     const hasMinLength = password.length >= 6;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     toast.dismiss();
+
+    if (!email) {
+      toast.error("Please enter your email first.");
+      return;
+    }
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
 
     if (!hasUppercase) {
       toast.error("Password must include at least one uppercase letter.");
