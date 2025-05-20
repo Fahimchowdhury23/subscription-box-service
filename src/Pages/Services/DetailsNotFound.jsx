@@ -11,7 +11,7 @@ const DetailsNotFound = () => {
     toast.dismiss();
     toast.error("Details not found!", {
       duration: 2000,
-      className: "font-semibold text-xl",
+      className: "font-medium text-xl",
     });
   }, []);
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { FaCheck, FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { FiShoppingCart } from "react-icons/fi";
 import { IoArrowUndo } from "react-icons/io5";
 import { Link, useLoaderData, useParams } from "react-router";
 
@@ -86,7 +87,17 @@ const ServiceDetails = () => {
       <p className="text-2xl text-primary text-center font-bold">
         From ${price} / {frequency}
       </p>
-      <p className="text-xl px-20 text-center mb-8">{description}</p>
+
+      <div className="text-center">
+        <Link to={`/add-to-cart/${id}`}>
+          <button className="mt-4 text-xl font-semibold bg-sky-500 text-white px-10 py-6 btn border-none  rounded-xl cursor-pointer">
+            <FiShoppingCart size={24} className="mr-1 flex items-center" /> Add
+            to Cart
+          </button>
+        </Link>
+      </div>
+
+      <p className="text-xl px-24 text-center mb-8">{description}</p>
 
       <div className="flex justify-between items-center pt-8 px-40">
         <div className="flex gap-5">

@@ -1,4 +1,5 @@
 import React from "react";
+import { FiShoppingCart } from "react-icons/fi";
 import { Link } from "react-router";
 
 const Service = ({ subscription }) => {
@@ -14,8 +15,8 @@ const Service = ({ subscription }) => {
   } = subscription;
 
   return (
-    <section className="bg-white p-3 hover:scale-105 cursor-pointer transition duration-400 ease-out rounded-2xl flex flex-col">
-      <div className="bg-[#f5deb3] text-left rounded-xl flex-1">
+    <section className="bg-white p-3 rounded-2xl flex flex-col">
+      <div className="bg-[#f5deb3] text-left rounded-xl mb-4 flex-1">
         <img
           className="rounded-xl rounded-bl-none rounded-br-none object-cover w-full"
           src={thumbnail}
@@ -59,11 +60,20 @@ const Service = ({ subscription }) => {
           ))}
         </ul>
       </div>
-      <Link to={`details/${id}`}>
-        <button className="w-full mt-4 text-xl font-semibold border-1 text-sky-500 border-solid border-sky-500 p-5 btn btn-outline hover:bg-sky-500 hover:text-white rounded-full cursor-pointer">
-          View More
-        </button>
-      </Link>
+
+      <div className="flex flex-col gap-2">
+        <Link to={`details/${id}`}>
+          <button className="w-full text-xl font-semibold border-1 bg-white text-sky-500 border-solid border-sky-500 p-5 btn btn-outline hover:bg-sky-500 hover:text-white rounded-full cursor-pointer">
+            View More
+          </button>
+        </Link>
+        <Link to={`/add-to-cart/${id}`}>
+          <button className="w-full text-xl font-semibold bg-white text-sky-500 border-sky-500 hover:bg-sky-500 hover:text-white p-5 btn rounded-full cursor-pointer">
+            <FiShoppingCart size={24} className="mr-1 flex items-center" /> Add
+            to Cart
+          </button>
+        </Link>
+      </div>
     </section>
   );
 };

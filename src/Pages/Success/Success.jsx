@@ -22,7 +22,7 @@ const Success = () => {
               alt="Reviews"
             />
             <p className="font-bold text-5xl">
-              <CountUp enableScrollSpy end={256} duration={4}></CountUp>+
+              <CountUp enableScrollSpy end={250} duration={4}></CountUp>+
             </p>
             <p className="font-semibold text-2xl text-[rgba(26,24,24,0.76)]">
               Total Categories
@@ -64,7 +64,7 @@ const Success = () => {
               alt="Happy Customer"
             />
             <p className="font-bold text-5xl">
-              <CountUp enableScrollSpy end={300} duration={4}></CountUp>+
+              <CountUp enableScrollSpy end={3000} duration={4}></CountUp>+
             </p>
             <p className="font-semibold text-2xl text-[rgba(26,24,24,0.76)]">
               Customer Satisfaction
