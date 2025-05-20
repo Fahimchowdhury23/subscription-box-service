@@ -9,9 +9,9 @@ const Services = () => {
   const subscriptionData = use(subscriptionPromise);
 
   return (
-    <section id="services" className="text-center space-y-6 pt-20">
-      <div className="px-40">
-        <h1 className="text-3xl mb-6 font-extrabold">
+    <section id="services" className="text-center space-y-6 pt-8 lg:pt-20">
+      <div className="px-8 lg:px-40">
+        <h1 className="text-3xl mb-6 font-bold lg:font-extrabold">
           Need It? Want It? It's Already in Your Next Box.
         </h1>
         <p className="text-xl">

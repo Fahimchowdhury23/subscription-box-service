@@ -17,7 +17,7 @@
 }
 
 .nav-link {
-  @apply relative rounded px-3 py-1 text-xl backdrop-blur-md 
+  @apply relative rounded px-2 lg:px-3 py-1 lg:text-xl backdrop-blur-md 
 text-slate-800 transition-transform ease-out duration-150 hover:bg-white/60;
 }
 .nav-link.active {

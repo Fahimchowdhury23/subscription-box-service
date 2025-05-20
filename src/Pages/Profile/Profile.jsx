@@ -61,26 +61,26 @@ const Profile = () => {
   return (
     <section className="w-11/12 mx-auto">
       <title>{dynamicName}</title>
-      <div className="my-10 flex flex-col items-center mx-auto w-[50%] h-[70vh] bg-sky-200/50 backdrop-blur-xl border border-white/30 shadow-xl rounded-3xl">
-        <h1 className="text-3xl font-bold pt-12">Profile Details</h1>
+      <div className="my-10 flex flex-col items-center mx-auto max-w-xl lg:max-w-full lg:w-[50%] lg:h-[70vh] bg-sky-200/50 backdrop-blur-xl border border-white/30 shadow-xl rounded-3xl">
+        <h1 className="text-3xl font-bold pt-6 lg:pt-12">Profile Details</h1>
 
-        <div className="mt-10 flex items-center gap-10">
+        <div className="mt-10 flex flex-col lg:flex-row items-center gap-10">
           <div>
             <img
-              className="rounded-full w-60 h-60 object-cover"
+              className="rounded-full w-32 h-32 lg:w-60 lg:h-60 object-cover"
               src={photoURL}
               alt={displayName}
             />
           </div>
 
-          <div>
+          <div className="pb-8 lg:pb-0">
             <div className="flex gap-8">
               <div>
                 <h3 className="text-2xl font-medium mb-1">{displayName}</h3>
                 <p className="text-gray-500">Geneva, Switzerland</p>
               </div>
 
-              <div>
+              <div className="flex lg:flex-col gap-4 lg:gap-0">
                 <button
                   onClick={() => {
                     setShowEdit(true);
@@ -131,9 +131,9 @@ const Profile = () => {
 
       {showEdit ? (
         <>
-          <div className="py-12">
-            <div className="w-full max-w-2xl mx-auto p-10 rounded-3xl bg-white/20 backdrop-blur-xl border border-white/50 shadow-xl">
-              <h2 className="flex items-center justify-center gap-3 text-4xl font-bold text-slate-700 drop-shadow mb-5">
+          <div className="pt-5 pb-12 lg:py-12">
+            <div className="w-full max-w-xl lg:max-w-2xl mx-auto p-10 rounded-3xl bg-white/20 backdrop-blur-xl border border-white/50 shadow-xl">
+              <h2 className="flex items-center justify-center gap-3 text-3xl lg:text-4xl font-bold text-slate-700 drop-shadow mb-5">
                 <FaCircleUser /> Update your Profile
               </h2>
 

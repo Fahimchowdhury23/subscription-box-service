@@ -7,8 +7,8 @@ import Shopping from "../Shopping/Shopping";
 
 const Home = () => {
   return (
-    <section className="pt-8">
-      <h1 className="italic text-5xl pb-7 font-extrabold text-center tracking-wide animate-pulse transition duration-500 ease-in-out ">
+    <section className="pt-6 lg:pt-8">
+      <h1 className="italic text-4xl lg:text-5xl pb-7 font-extrabold text-center tracking-wide animate-pulse transition duration-500 ease-in-out ">
         Your interests, delivered.
       </h1>
       <Slider></Slider>

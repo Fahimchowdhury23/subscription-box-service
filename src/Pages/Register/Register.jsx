@@ -113,7 +113,7 @@ const Register = () => {
         Let's Get started!
       </h2>
 
-      <div className="w-full max-w-2xl p-10 mx-auto rounded-3xl bg-white/20 backdrop-blur-xl border border-white/50 shadow-xl">
+      <div className="w-full max-w-xl lg:max-w-2xl p-10 mx-auto rounded-3xl bg-white/20 backdrop-blur-xl border border-white/50 shadow-xl">
         {/* Google Sign In */}
 
         <button

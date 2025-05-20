@@ -119,9 +119,9 @@ const Login = () => {
   return (
     <section className="py-12">
       <title>Login Page</title>
-      <div className="grid grid-cols-2">
-        <div className="flex flex-col w-full rounded-l-xl items-center justify-center bg-blue-700">
-          <h2 className="text-center text-4xl font-bold text-white drop-shadow mb-8">
+      <div className="grid grid-cols-1 max-w-xl lg:max-w-full mx-auto lg:mx-0 gap-6 lg:gap-0 lg:grid-cols-2">
+        <div className="flex flex-col w-full rounded-xl lg:rounded-r-none items-center justify-center bg-blue-700">
+          <h2 className="text-center pt-6 lg:pt-0 text-4xl font-bold text-white drop-shadow mb-8">
             {state ? "You have to Login first!" : "Welcome Back!"}
           </h2>
           <img
@@ -130,7 +130,7 @@ const Login = () => {
           />
         </div>
 
-        <div className="w-full p-10 border-l-0 rounded-r-3xl bg-white/20 backdrop-blur-xl border border-white/50 shadow-xl">
+        <div className="w-full p-10 lg:border-l-0 rounded-3xl lg:rounded-l-none lg:rounded-r-3xl bg-white/20 backdrop-blur-xl border border-white/50 shadow-xl">
           <div className="w-10/12 mx-auto">
             {/* Google Sign In */}
 

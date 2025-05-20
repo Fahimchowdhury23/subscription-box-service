@@ -28,7 +28,7 @@ const ResetPassword = () => {
   return (
     <section className="py-12">
       <title>Reset Password</title>
-      <div className="w-full max-w-2xl mx-auto p-10 rounded-3xl bg-white/20 backdrop-blur-xl border border-white/50 shadow-xl">
+      <div className="w-full max-w-lg lg:max-w-2xl mx-auto p-10 rounded-3xl bg-white/20 backdrop-blur-xl border border-white/50 shadow-xl">
         <h2 className="text-center text-4xl font-bold text-slate-700 drop-shadow mb-5">
           Reset Your Password
         </h2>

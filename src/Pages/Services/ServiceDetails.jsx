@@ -97,9 +97,9 @@ const ServiceDetails = () => {
         </Link>
       </div>
 
-      <p className="text-xl px-24 text-center mb-8">{description}</p>
+      <p className="text-xl px-10 lg:px-24 text-center mb-8">{description}</p>
 
-      <div className="flex justify-between items-center pt-8 px-40">
+      <div className="flex gap-10 lg:gap-0 flex-col-reverse lg:flex-row justify-between items-center pt-8 px-16 lg:px-40">
         <div className="flex gap-5">
           <div className="flex gap-5">
             <div className="flex flex-col space-y-5">
@@ -156,7 +156,7 @@ const ServiceDetails = () => {
 
         {/* Review Section */}
 
-        <div className="w-10/12 mt-6 px-6 py-4 rounded-2xl border-1 border-sky-500">
+        <div className="w-6/9 lg:w-10/12 mx-auto mt-6 px-6 py-4 rounded-2xl border-1 border-sky-500">
           <h2 className="text-xl font-semibold mb-4 text-center">
             Write a Review
           </h2>

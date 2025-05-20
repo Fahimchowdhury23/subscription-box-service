@@ -23,21 +23,21 @@ const Navbar = () => {
   };
 
   return (
-    <section className="w-11/12 mx-auto p-5 border-3 border-t-0 rounded-2xl rounded-t-none border-white/60">
+    <section className="w-11/12 mx-auto p-3 lg:p-5 border-3 border-t-0 rounded-2xl rounded-t-none border-white/60">
       <nav className="flex justify-between">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <img
-            className="w-10 h-10"
+            className="w-6 h-6 lg:w-10 lg:h-10"
             src="https://i.ibb.co/Q7Dwz2bb/logo-removebg-preview.png"
             alt=""
           />
           <Link to="/">
-            <h1 className="text-3xl text-[#2077b6] tracking-wide font-bold cursor-pointer">
+            <h1 className="text-xl lg:text-3xl text-[#2077b6] tracking-wide font-bold cursor-pointer">
               InterestInBox
             </h1>
           </Link>
         </div>
-        <div className="flex items-center gap-8">
+        <div className="flex items-center">
           <div className="flex gap-4">
             <NavLink className="nav-link" to="/">
               Home
@@ -55,8 +55,8 @@ const Navbar = () => {
 
         <div>
           {user ? (
-            <div className="flex items-center gap-3">
-              <div className="flex items-center mr-3 font-semibold text-xl">
+            <div className="flex items-center gap-2 lg:gap-3">
+              <div className="flex items-center mr-1 lg:mr-3 font-semibold text-xl">
                 {user?.displayName}
               </div>
 
@@ -84,14 +84,14 @@ const Navbar = () => {
 
               <button
                 onClick={handleSignOut}
-                className="btn flex items-center gap-1 rounded-full bg-gradient-to-br from-[#FF6A00] to-[#F20073] shadow-lg p-5 border-none text-white text-lg font-bold"
+                className="btn flex items-center gap-1 rounded-full bg-gradient-to-br from-[#FF6A00] to-[#F20073] shadow-lg p-3 lg:p-5 border-none text-white lg:text-lg font-bold"
               >
                 <LuLogOut /> Sign Out
               </button>
             </div>
           ) : (
             <Link to="/auth/login">
-              <button className="btn flex items-center gap-1 p-5 rounded-full bg-gradient-to-br from-[#34D27A] to-[#0CA66E] shadow-lg border-none text-white text-lg font-bold">
+              <button className="btn flex items-center gap-1 p-3 lg:p-5 rounded-full bg-gradient-to-br from-[#34D27A] to-[#0CA66E] shadow-lg border-none text-white lg:text-lg font-bold">
                 <MdOutlineLogin /> Login
               </button>
             </Link>

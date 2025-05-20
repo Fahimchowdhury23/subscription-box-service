@@ -4,7 +4,10 @@ import { BiHappyBeaming } from "react-icons/bi";
 
 const Success = () => {
   return (
-    <section id="success" className="pt-20 pb-16 text-center w-10/12 mx-auto">
+    <section
+      id="success"
+      className="pt-12 lg:pt-20 pb-16 text-center w-11/12 lg:w-10/12 mx-auto"
+    >
       <div className="flex flex-col gap-4">
         <h2 className="font-bold text-sky-700 text-4xl">
           Your Neighborhood's Finest Service
@@ -14,10 +17,10 @@ const Success = () => {
           — tailored, trusted, and delivered with convenience and care.
         </p>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 text-left gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 text-center lg:text-left gap-5">
           <div className="p-5 bg-sky-200 flex flex-col gap-4 rounded-2xl">
             <img
-              className="w-16 h-16"
+              className="w-16 h-16 mx-auto lg:mx-0"
               src="https://i.ibb.co/wFdYZbqn/categories.png"
               alt="Reviews"
             />
@@ -31,7 +34,7 @@ const Success = () => {
 
           <div className="p-5 bg-sky-200 flex flex-col gap-4 rounded-2xl">
             <img
-              className="w-16 h-16"
+              className="w-16 h-16 mx-auto lg:mx-0"
               src="https://i.ibb.co/0jSpDnGB/Customer-Reviews-3-D-Icon-transparent-emp-800.webp"
               alt="Reviews"
             />
@@ -45,7 +48,7 @@ const Success = () => {
 
           <div className="p-5 bg-sky-200 flex flex-col gap-4 rounded-2xl">
             <img
-              className="w-16 h-16"
+              className="w-16 h-16 mx-auto lg:mx-0"
               src="https://i.ibb.co/LzsvD2D9/shop.png"
               alt="Shops"
             />
@@ -59,7 +62,7 @@ const Success = () => {
 
           <div className="p-5 bg-sky-200 flex flex-col gap-4 rounded-2xl">
             <img
-              className="w-16 h-16"
+              className="w-16 h-16 mx-auto lg:mx-0"
               src="https://i.ibb.co/7xgv7jHF/happy.png"
               alt="Happy Customer"
             />

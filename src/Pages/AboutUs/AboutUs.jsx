@@ -8,12 +8,12 @@ const AboutUs = () => {
       <div className="p-5">
         <div className="flex justify-center">
           <img
-            className="rounded-2xl max-w-3xl"
+            className="rounded-2xl max-w-xl lg:max-w-3xl"
             src="https://i.ibb.co/8nq539d4/about-us.png"
-            alt=""
+            alt="About Us"
           />
         </div>
-        <p className="font-medium pt-6 text-xl text-center px-24 text-slate-700/80">
+        <p className="font-medium pt-6 text-xl text-center px-6 lg:px-24 text-slate-700/80">
           Welcome to <span className="font-bold text-lg">InterestInBox</span>,
           where passion meets purpose. We are a dedicated team of enthusiasts
           committed to bringing you carefully curated subscription boxes that

@@ -6,8 +6,8 @@ const Shopping = () => {
       <h1 className="text-center text-4xl pb-10 font-extrabold">
         Trusted by Thousands of Happy Customers
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 w-11/12 mx-auto items-center">
-        <div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0 w-11/12 mx-auto items-center">
+        <div className="text-center lg:text-left">
           <p className="text-2xl font-bold mb-5">Your Smile is our Strength</p>
           <div>
             <div>
@@ -19,7 +19,7 @@ const Shopping = () => {
               </ul>
             </div>
 
-            <div className="border-b-2 border-sky-400 w-6/9 my-3"></div>
+            <div className="border-b-2 border-sky-400 w-11/12 lg:w-6/9 my-3"></div>
 
             <h3 className="text-xl font-semibold mt-4">Global Footprint</h3>
             <ul className="text-lg font-medium space-y-2">
@@ -28,7 +28,7 @@ const Shopping = () => {
               <li>• Interactive map showing customer clusters worldwide</li>
             </ul>
 
-            <div className="border-b-2 border-sky-400 w-6/9 my-3"></div>
+            <div className="border-b-2 border-sky-400 w-11/12 lg:w-6/9 my-3"></div>
 
             <h3 className="text-xl font-semibold mt-4">Sustainable Impact</h3>
             <ul className="text-lg font-medium space-y-2">
@@ -39,7 +39,7 @@ const Shopping = () => {
           </div>
         </div>
         <img
-          className="rounded-2xl w-full max-w-lg mx-auto"
+          className="rounded-2xl w-full max-w-xl lg:max-w-lg mx-auto"
           src="https://i.ibb.co/hJksYVvS/shopping.jpg"
           alt="shopping"
         />
