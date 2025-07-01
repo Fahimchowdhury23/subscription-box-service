@@ -63,6 +63,35 @@ Our application includes dedicated routes to handle errors gracefully:
 
 ---
 
+## Installation
+
+To set up the project locally, follow these steps:
+
+1. **Clone the repository :**
+
+   ```bash
+   git clone https://github.com/Fahimchowdhury23/subscription-box-service.git
+   ```
+
+2. **Navigate to the directory :**
+
+   ```bash
+   cd subscription-box-service
+   ```
+
+3. **Install dependencies :**
+
+   ```bash
+   npm install
+   ```
+
+4. **Run the development server :**
+
+   ```bash
+   npm run dev
+   ```
+---
+
 ## 📸 App Screenshots
 
 ### 🔐 Login Page
