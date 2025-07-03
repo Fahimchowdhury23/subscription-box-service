@@ -59,7 +59,6 @@ Our application includes dedicated routes to handle errors gracefully:
 | `react-countup`   | Animated number counter           |
 | `react-icons`     | Icon library                      |
 | `react-hot-toast` | Toast notifications               |
-| `eslint`          | Linting and formatting            |
 
 ---
 
